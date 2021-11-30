@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "status": false,
+      "title": "learn redux",
+      "id": 0.3025078672170831
+    },
+    {
+      "status": false,
+      "title": "learn react",
+      "id": 0.8723979758415263
+    },
+    {
+      "status": false,
+      "title": "learn vue",
+      "id": 0.9149917923367727
+    },
+    {
+      "status": false,
+      "title": "this is a sample task ",
+      "id": 0.016531371196630174
+    },
+    {
+      "status": false,
+      "title": "learn network",
+      "id": 0.05417472566463344
+    }
+  ]
+}
