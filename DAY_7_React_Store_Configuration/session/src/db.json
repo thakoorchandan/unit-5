@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "status": false,
+      "title": "learn redux",
+      "id": 0.3025078672170831
+    },
+    {
+      "status": false,
+      "title": "learn react",
+      "id": 0.8723979758415263
+    },
+    {
+      "status": false,
+      "title": "sample 1",
+      "id": 0.16904413086813852
+    },
+    {
+      "status": false,
+      "title": "sample 2",
+      "id": 0.38394670630577266
+    }
+  ]
+}

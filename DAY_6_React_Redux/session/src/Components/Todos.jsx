@@ -30,8 +30,22 @@ export const Todos = () => {
   const { loading, error, data } = useSelector((store) => store.todos);
   const [text, setText] = useState("");
 
+  const handleAdd = async () => {
+    dispatch(addTodoLoading());
+    const payload = { status: false, title: text, id: Math.random() };
+    try {
+      const { data } = await axios.post("http://localhost:3001/todos", payload);
+      dispatch(addTodoSuccess(data));
+      getData();
+    } catch (err) {
+      dispatch(addTodoError("error: ", err));
+    }
+  };
+
   return loading ? (
     <h1>...Loading, Please Wait</h1>
+  ) : error ? (
+    <h1>Error Occuered</h1>
   ) : (
     <div>
       <input
@@ -40,26 +54,11 @@ export const Todos = () => {
         placeholder="Enter Todos"
         onChange={(e) => setText(e.target.value)}
       />
-      <button
-        onClick={async () => {
-          dispatch(addTodoLoading());
-          const payload = { status: false, title: text, id: Math.random() };
-          try {
-            const { data } = await axios.post(
-              "http://localhost:3001/todos",
-              payload
-            );
-            dispatch(addTodoSuccess(data));
-            getData();
-          } catch (err) {
-            dispatch(addTodoError(err));
-          }
-        }}
-      >
-        Add
-      </button>
+      <button onClick={handleAdd}>Add</button>
       {data.map((e) => (
-        <div key={e.id}>{e.title}</div>
+        <div>
+          <div key={e.id}>{e.title}</div>
+        </div>
       ))}
     </div>
   );
