@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 function useTimeout(delay) {
   const [ready, setReady] = useState(false);
-  const [count, setCount] = useState(1);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,7 +13,7 @@ function useTimeout(delay) {
 }
 
 function Timeout() {
-  const delay = useTimeout(5);
+  const delay = useTimeout(8);
 
   if (!delay) {
     return null;
